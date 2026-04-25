@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Copy to setenv.sh (gitignored) and fill in.
+
+# Path to a clean US Gemfire SNES ROM (headerless preferred; see docs/platforms.md).
+export GEMFIRE_SNES_ROM="${HOME}/gaming/roms/SNES/USA/Gemfire (USA).sfc"
+
+# Path to a clean US Gemfire Genesis ROM.
+export GEMFIRE_GENESIS_ROM="${HOME}/gaming/roms/Genesis/Gemfire.zip"
+
+# Path to a clean US Gemfire NES ROM.
+export GEMFIRE_NES_ROM="${HOME}/gaming/roms/NES/USA/Gemfire (U).nes"
+
+# Local working dir for decompressed Koei data, patches, etc. Gitignored.
+export GEMFIRE_WORK_DIR="${PWD}/tmp"

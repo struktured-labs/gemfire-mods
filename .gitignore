@@ -1,0 +1,40 @@
+# ROMs — we don't redistribute Koei IP
+# (note: Genesis ROMs use .md, but we don't allow loose .md files in this repo;
+#  if you must commit Genesis-format binaries, name them .gen or .bin and they'll be ignored)
+*.sfc
+*.smc
+*.nes
+*.gen
+*.bin
+*.zip
+*.7z
+*.rar
+
+# Save / state files
+*.sav
+*.srm
+*.state
+*.st*
+
+# Decompressed Koei data (per Koei Decompress)
+*.kdf
+*.kcf
+*.dat
+
+# Local environment
+setenv.sh
+.envrc
+.direnv/
+
+# Scratch
+tmp/
+.tmp/
+build/
+dist/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
