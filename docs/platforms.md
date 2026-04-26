@@ -1,6 +1,16 @@
 # Platforms
 
-Per-platform ROM facts confirmed by inspecting the user's local copies on 2026-04-25.
+Per-platform ROM facts confirmed by inspecting the user's local copies on 2026-04-25. For a SNES↔Genesis content/tooling comparison see [`snes-vs-genesis.md`](snes-vs-genesis.md).
+
+## US release order
+
+| Platform | US date |
+|---|---|
+| NES | March 1992 |
+| Genesis | November 1992 |
+| SNES | December 1992 |
+
+The Genesis cart shipped a month before the SNES one in the US — the SNES is the polished/final port, not the lead platform.
 
 ## SNES (Super Nintendo)
 
@@ -32,7 +42,7 @@ This is the canonical target for tooling — every public hack and editor assume
 - SRAM: present, range $200001–$203FFF (`RA. . ... ?.    `)
 - Mapper: standard Sega cart, no extra hardware
 
-The Genesis version is the same era and (we suspect) the same engine port as SNES, but **no public modding tooling targets it**. If we want it modded, we drive the work ourselves.
+Same content as the SNES port (officers, provinces, gems, units, scenarios all match byte-for-byte in the localization tables), but **no public modding tooling targets it**. Notably, the Genesis ROM stores **all in-game text as plaintext ASCII** while the SNES version compresses it — so for text edits the Genesis is actually the easier target. See `snes-vs-genesis.md`.
 
 ## NES (Nintendo Entertainment System)
 

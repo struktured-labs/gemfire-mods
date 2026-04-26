@@ -5,8 +5,8 @@ Compiled 2026-04-25 at the start of this project. The point is to map the existi
 ## What Gemfire is
 
 - Koei strategy game, "feudal-fantasy" reskin of their Romance of the Three Kingdoms II engine.
-- 30 provinces in the kingdom of Ishmeria, 11 ruling families, 7 magical gems, ~64 named officers, 15 mercenary unit types.
-- Releases: PC (1991), NES + SNES + Genesis (1992), MSX, FM Towns, Sharp X68000.
+- 30 provinces in the kingdom of Ishmeria, 11 ruling families, 7 magical gems, ~64 named officers, 16 mercenary unit types (drque.net's published list of 15 omits Highlanders — both ROMs include it).
+- US release order: NES (Mar 1992) → Genesis (Nov 1992) → SNES (Dec 1992). The SNES port is the polished/final one, not the lead.
 - The SNES US version is `GEMFIRE` (1MB LoROM, internal title "GEMFIRE", standard SNES header at $7FC0).
 - Genesis US version is "Gemfire (USA)" (1MB, Koei product code T-76036, region "U", SRAM at $200001+).
 - NES US version is 512KB (256KB PRG, 256KB CHR, mapper 5 / MMC5).
@@ -70,12 +70,13 @@ These are the holes in the public record as of writing:
 
 ## What gives us the most leverage
 
-Ranked by build-cost vs. utility:
+Ranked by build-cost vs. utility (updated after the SNES↔Genesis comparison — see [`snes-vs-genesis.md`](snes-vs-genesis.md)):
 
-1. **Open-source the .ods notes as Markdown / CSV** so they're diffable, reviewable, and can be the source-of-truth for everyone else. Needs the .ods first.
-2. **Genesis ROM map** — almost certainly close to SNES ROM map structurally (same engine), but no published reverse engineering. Low-hanging fruit.
-3. **A scenario file that's pure text → IPS pipeline.** Author scenarios in YAML/JSON, get a patch out. Replaces the Nightmare workflow with a CLI that's diffable in git.
-4. **Save-file editor** (independent of ROM hacking). DizavidHZ's GameFAQs guide is essentially "exploit the game's save-state mechanics to author a custom scenario via the death-of-rival glitch". A save-state editor would do the same thing in a fraction of the time.
+1. **Save-file editor** (no ROM hacking needed). DizavidHZ's GameFAQs guide is "exploit the game's save-state mechanics to author a custom scenario via the death-of-rival glitch". A SRAM editor does that in seconds. Composes with any existing hack including Dawn of Ishmeria.
+2. **Genesis text editor.** Genesis stores all in-game text as plaintext ASCII. Officer names, scenario intros, random event dialogue — all directly hex-editable. No published tool exists for this. An afternoon of work, immediately useful.
+3. **Open-source the .ods notes as Markdown / CSV** so they're diffable, reviewable, and the source-of-truth for everyone else. Blocked on getting the .ods through Cloudflare.
+4. **Genesis scenario/data ROM map.** Same content as SNES (confirmed via shared localization tables) but with no compression layer to fight. Higher reverse-engineering yield per hour than SNES.
+5. **YAML/JSON → IPS pipeline.** Author scenarios in text, compile to a patch. Replaces the Nightmare workflow with something diffable in git. Bigger lift; do after the format is mapped.
 
 ## Open questions for the user
 
